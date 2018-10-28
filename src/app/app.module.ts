@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { GitService } from './git.service';
 
 import { AppComponent } from './app.component';
 import { GitComponent } from './git/git.component';
@@ -7,12 +9,14 @@ import { GitComponent } from './git/git.component';
 @NgModule({
   declarations: [
     AppComponent,
-    GitComponent
+    GitComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [GitService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

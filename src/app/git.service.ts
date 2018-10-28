@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http,Headers } from '@angular/http';
-import  'rxjs/add/operator/map';
+import { HttpClient} from '@angular/common/http';
+import {map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class GitService {
    private clientsecret = "4ba75bacf663cb9b6ec0f7f4f365f985c79ff3e";
 
 
-  constructor(private http:Http) {
+  constructor(private http:HttpClient) {
      console.log("service is now ready!");
      this.username = "Kernael92";
  }
  getProfileInfo(){
-    return this.http.get("https://api.github.com/users/"+ this.username + "?client_id"+ this.clieid + "?client_secret" + this.clientsecret).map(res => res.json());
+    return this.http.get("https://api.github.com/users/"+ this.username + "?client_id"+ this.clientid + "&client_secret" + this.clientsecret);
 }
 }
