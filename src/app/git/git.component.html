@@ -23,6 +23,16 @@
 
             </p>
          </div>
+         <div class="panel-title">
+            <h2>REPOSITORIES</h2>
+            </div>
+            <div class="panel-body" *ngFor="let repo of repos">
+               <p><a href="{{user.repo_url}}">{{repo.name}}</a></p>
+               <p>{{repo.description}}</p>
+
+
+
+         </div>
 
 
 
