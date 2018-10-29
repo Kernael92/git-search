@@ -17,7 +17,10 @@ export class GitService {
      console.log("service is now ready!");
      this.username = "Kernael92";
  }
- getProfileInfo(){
+ getUserInfo(){
     return this.http.get("https://api.github.com/users/"+ this.username + "?client_id"+ this.clientid + "&client_secret" + this.clientsecret);
+}
+getUserRepos(){
+   return this.http.get("https://api.github.com/users/"+ this.username + "/repos?client_id"+ this.clientid + "&client_secret" + this.clientsecret);
 }
 }
