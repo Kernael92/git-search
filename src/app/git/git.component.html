@@ -1,7 +1,9 @@
-<div *ngIf="data">
+<div *ngIf="user">
    <div class="panel panel-info">
       <div class="panel-heading">
-         {{user.login}}
+         <h1>{{user.name}}</h1>
+         <h2><a href="{{user.html_url}}">{{user.login}}</a></h2>
+
 
       </div>
 
