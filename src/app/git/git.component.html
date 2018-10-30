@@ -1,3 +1,4 @@
+<body style="background-color: maroon;">
 <form class="search-form">
    <div class="form-group">
       <div class="row">
@@ -37,13 +38,20 @@
             <img src="{{user.avatar_url}}" class="img-circle img-responsive " >
             </div>
             <div class="col-sm-12" >
-               <p>
-                  <br><span class="panel panel-info"><a href="{{user.followers_url}}">{{user.followers}}followers</a></span>
-                  <br><span class="label label-success"><a href="{{user.followings_url}}"> {{user.following}} Following</a></span>
-                  <br><span class="label label-primary">{{user.public_repos}} Public Repositories</span>
 
-               </p>
-            </div>
+                  <p class="panel panel-info"><a href="{{user.followers_url}}">{{user.followers}}followers</a></p>
+                  </div>
+                  <div class="col-sm-12">
+                     <p class="label label-success"><a href="{{user.followings_url}}"> {{user.following}} Following</a></p>
+                  </div>
+                  <div class="col-sm-12">
+                     <p class="label label-primary">{{user.public_repos}} Public Repositories</p>
+                  </div>
+
+
+
+
+
             <div class="panel-title">
                <div class="col-md-19">
                <h2>REPOS</h2>
@@ -79,3 +87,4 @@
 
    </div>
 </div>
+</body>
