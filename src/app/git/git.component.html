@@ -39,13 +39,13 @@
             </div>
             <div class="col-sm-12" >
 
-                  <p class="panel panel-info"><a href="{{user.followers_url}}">{{user.followers}}followers</a></p>
+                  <p class="panel panel-info"><a href="{{user.followers_url}}" style="font-size: 20px;">{{user.followers}}followers</a></p>
                   </div>
                   <div class="col-sm-12">
-                     <p class="label label-success"><a href="{{user.followings_url}}"> {{user.following}} Following</a></p>
+                     <p class="label label-success"><a href="{{user.followings_url}}" style="font-size: 20px;"> {{user.following}} Following</a></p>
                   </div>
                   <div class="col-sm-12">
-                     <p class="label label-primary">{{user.public_repos}} Public Repositories</p>
+                     <p class="label label-primary" style="font-size: 20px;">{{user.public_repos}} Public Repositories</p>
                   </div>
 
 
@@ -58,10 +58,10 @@
 
                <div class="panel-body" *ngFor="let repo of repos">
 
-                     <br><p><a href="{{user.repo_url}}">{{repo.name}}</a></p>
+                     <br><p><a href="{{user.repo_url}}" style="font-size: 25px;">{{repo.name}}</a></p>
 
 
-                        <p>{{repo.description}}</p>
+                        <p style="font-size: 20px;">{{repo.description}}</p>
                         </div>
                         </div>
 
