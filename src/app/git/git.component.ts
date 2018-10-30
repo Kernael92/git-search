@@ -8,17 +8,32 @@ import { GitService } from '../git.service';
 export class GitComponent implements OnInit {
    user:any;
    repos:any;
+   username: string;
 
   constructor( private gitService: GitService) {
      this.gitService.getUserInfo().subscribe(user =>{
-        console.log(user);
-        this.user= user;
-     })
+      console.log(user);
+      this.user= user;
+   });
      this.gitService.getUserRepos().subscribe(repos =>{
-        console.log(repos);
-        this.repos = repos;
-     })
+      console.log(repos);
+      this.repos = repos;
+   });
+
  }
+ findProfile(){
+    this.gitService.updateProfile(this.username);
+    this.gitService.getUserInfo().subscribe(user =>{
+      console.log(user);
+      this.user= user;
+   });
+    this.gitService.getUserRepos().subscribe(repos =>{
+      console.log(repos);
+      this.repos = repos;
+   });
+}
+
+
 
 
   ngOnInit() {

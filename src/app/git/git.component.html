@@ -1,13 +1,76 @@
-<div *ngIf="user">
-   <div class="panel panel-info">
-      <div class="panel-heading">
-         <div class="row">
-            <div class="col-md-6">
-               <h1>{{user.name}}</h1>
-               <h2><a href="{{user.html_url}}">{{user.login}}</a></h2>
+<form class="search-form">
+   <div class="form-group">
+      <div class="row">
+         <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Search git users with username"[(ngModel)]="username" name="username" (keyup)="findProfile()">
+         </div>
+
+      </div>
+
+   </div>
+
+
+</form>
+<div class="container">
+   <div *ngIf="user">
+      <div class="panel panel-info">
+         <div class="panel-heading">
+            <div class="row">
+               <div class="col-md-6">
+                  <h1>{{user.name}}</h1>
+                  <h2><a href="{{user.html_url}}">{{user.login}}</a></h2>
+               </div>
+
             </div>
 
+
+
+
          </div>
+
+      </div>
+
+   </div>
+   <div class="panel-body">
+      <div class="row">
+         <div class="col-sm-3">
+            <img src="{{user.avatar_url}}" class="img-circle img-responsive " >
+            </div>
+            <div class="col-sm-12" >
+               <p>
+                  <br><span class="panel panel-info"><a href="{{user.followers_url}}">{{user.followers}}followers</a></span>
+                  <br><span class="label label-success"><a href="{{user.followings_url}}"> {{user.following}} Following</a></span>
+                  <br><span class="label label-primary">{{user.public_repos}} Public Repositories</span>
+
+               </p>
+            </div>
+            <div class="panel-title">
+               <div class="col-md-19">
+               <h2>REPOS</h2>
+
+               <div class="panel-body" *ngFor="let repo of repos">
+
+                     <br><p><a href="{{user.repo_url}}">{{repo.name}}</a></p>
+
+
+                        <p>{{repo.description}}</p>
+                        </div>
+                        </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
 
 
 
@@ -15,52 +78,4 @@
       </div>
 
    </div>
-
-</div>
-<div class="panel-body">
-   <div class="row">
-      <div class="col-sm-3">
-         <img src="{{user.avatar_url}}" class="img-circle img-responsive ">
-         </div>
-         <div class="col-sm-12" style="float:left;">
-            <p>
-               <br><span class="panel panel-info"><a href="{{user.followers_url}}">{{user.followers}} followers</a></span>
-               <br><span class="label label-success"><a href="{{user.followings_url}}">Following {{user.following}}</a></span>
-               <br><span class="label label-primary">{{user.public_repos}} Public Repositories</span>
-
-            </p>
-         </div>
-         <div class="panel-title">
-            <div class="col-md-19">
-            <h2>REPOSITORIES</h2>
-
-            <div class="panel-body" *ngFor="let repo of repos">
-
-                  <br><p><a href="{{user.repo_url}}">{{repo.name}}</a></p>
-
-
-                     <p>{{repo.description}}</p>
-                     </div>
-                     </div>
-
-
-
-
-
-
-
-
-         </div>
-
-
-
-
-
-
-
-
-
-
-   </div>
-
 </div>

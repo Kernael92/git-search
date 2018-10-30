@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {map } from 'rxjs/operators';
+import { SearchComponent } from './search/search.component';
 
 
 @Injectable({
@@ -22,5 +23,9 @@ export class GitService {
 }
 getUserRepos(){
    return this.http.get("https://api.github.com/users/"+ this.username + "/repos?client_id"+ this.clientid + "&client_secret" + this.clientsecret);
+}
+updateProfile(username:string){
+   this.username = username;
+
 }
 }
