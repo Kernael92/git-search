@@ -29,6 +29,9 @@ RUN 'ng e2e' TO EXECUTE THE END-TO-END TESTS VIA [Protractor](http://www.protrac
 ## FURTHER HELP
 TO GET MORE HELP ON THE ANGULAR CLI USE 'ng help' OR GO CHECK OUT THE [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## BUGS ENCOUNTERED
+I ENCOUNTERED "can not find avatar_url undefined" WHICH I WAS NOT ABLE TO DEBUG
+
 ## CONTACT
 FOR ANY QUESTIONS OR CLARIFICATION, KINDLY CONTACT ME VIA THE FOLLOWING EMAIL ADDRESS kernaelapuko10@gmail.com
 # LICENSE
